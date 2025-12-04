@@ -62,6 +62,9 @@ void draw() {
   popMatrix();
   clone.contrain();
   clone.clawDraw();
+  if(dollI.y!=1330){
+    x++;
+  }
   if(lock){
     clone.clawDrop();
   }

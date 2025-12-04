@@ -12,6 +12,7 @@ class Doll{
   }
  
   void getDoll(){
+    
     if (clone2.clawPosition1.x >=-12 && clone2.clawPosition1.x<35&&doll!=2){    //lift doll 1 
       if(dollI.y>54){
         dollI.y-=14;
@@ -37,6 +38,7 @@ class Doll{
       }
     }
    }
+   //This function shift doll left
    void dollShift(){
     if(clawUp1){    //horizontal shift doll1
       dollI.x-=13.5;
@@ -49,7 +51,21 @@ class Doll{
       dollDrop1=true;
     }
   }
+  //This function drops doll to the hole
   void dollDrop(){
+    if(x>164){
+      dollI.y+=1;
+    }
+      if(dollI.y<700){  //if the doll1 is higher than the canvas
+        
+        if(count1==5){
+          speed+=1; 
+          count1=0;
+        }
+        count1++;
+      }
+      
+    
     if(dollDrop1){ //doll1 on top of the drop place
       dollI.y+=speed;
       println(dollI.y);
