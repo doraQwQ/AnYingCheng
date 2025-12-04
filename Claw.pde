@@ -4,7 +4,7 @@ class Claw{
   boolean clawed=false;
   int count=0;
   int accleration=0;
- 
+   
   //This function ensures the number are not over;
   void contrain(){
     clawPosition1.y=constrain(clawPosition1.y,-70,388);
@@ -60,7 +60,7 @@ class Claw{
       }else{
         clawed=false;
         lock=false;
-        first=true;
+        bottom=true;
         count=0;
       }
     }

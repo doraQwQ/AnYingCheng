@@ -8,9 +8,9 @@ int claw1Y=-70;
 int accleration=1;
 int counter=0;
 boolean lock=false;
-boolean first=true;
+boolean bottom=true;
 int timer=0;
-int x=1330,y=200;
+int x=0;
 PVector dollI = new PVector(650,1330);
 PVector dollII= new PVector(1300,1390);
 Claw clone= new Claw();
@@ -66,21 +66,22 @@ void draw() {
     clone.clawDrop();
   }
   if(clone.clawed){    //when claw is at bottom
-    if(first){          ///have a delay effect
+    if(bottom){          ///have a delay effect
       timer+=1;
       if(timer==40){
-        first=false;
+        bottom=false;
         timer=0;
       }
     }else{ 
       clone.clawBack();
-      
       clone3.getDoll();
-      //println("called");
+      clone3.dollShift();
+      clone3.dollDrop();
+      
+ 
     }
-  
+    
   }
-
 }
 //This funcition reset the speed as the user holds down button
 void resetSpeed(){
@@ -99,7 +100,6 @@ void keyPressed(){
    
       counter+=1;
     }
-    
   }
   if(key=='d'){
     if(!lock){    //prevent user from pressing when dropping claw
@@ -114,15 +114,19 @@ void keyPressed(){
     lock=true;
     clone.clawDrop(); 
   }
+  
   if(key=='q'){
-   // println("x="+clone.clawPosition1.x); 
-   //println("y="+clone.clawPosition1.y); 
-   println("x="+dollI.x);
-   println("y="+dollI.y);
+     println(x);
+  }
+
+   //println("x="+dollI.x);
+   //println("y="+dollI.y);
+   //println(clone3.clawUp1);
+   //println(clone3.dollDrop1);
    //println("x="+dollII.x);
    //println("y="+dollII.y);
-   
-  }
+
+  
   
 }
 //This function ensure user key releases
