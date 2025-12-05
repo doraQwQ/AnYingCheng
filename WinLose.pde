@@ -24,6 +24,18 @@ class WinLose{
         winning=false;
       }
     }
+    if(losing){
+      if(anCount<30){
+        pushMatrix();
+        scale(0.3,0.3);
+        image(lose,280,200);
+        popMatrix();
+        anCount++;
+      }else{
+        anCount=0;
+        losing=false;
+      }
+    }
     if(!winning&&!losing){
       anCount=0;
     }

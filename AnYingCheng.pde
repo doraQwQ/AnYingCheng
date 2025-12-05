@@ -15,6 +15,7 @@ boolean winning=false;
 boolean losing=false;
 int gone=0;
 int timer=0;
+int er=0;
 PVector dollI = new PVector(650,1330);
 PVector dollII= new PVector(1300,1390);
 Claw clone= new Claw();

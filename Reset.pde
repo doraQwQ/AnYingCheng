@@ -1,7 +1,6 @@
 class Reset{
   //This function reset dolls once both dolls are clawed
   void reset(){
-    
     if(gone==3){
       fill(0);
       text("LOADING",200,200);

@@ -57,9 +57,12 @@ class Doll{
   void dollWin(){
     if(dollII.x<17.5){
       winning=true;
-    }
-    if(dollI.x<-40){
+    }else if(dollI.x<-40){
       winning=true;
+    }else{
+      if(lock){
+        losing=true;
+      }
     }
   }
       
