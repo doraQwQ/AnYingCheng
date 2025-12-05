@@ -41,7 +41,7 @@ void setup() {
 /*starting position for claw -300,-70*/
 
 void draw() {
-
+  er++;
   bg();
   clone.contrain();
   clone.clawDraw();
@@ -66,6 +66,7 @@ void draw() {
     
   }
   clone3.dollWin();
+  clone.clawLose();
   clone4.whin();
   clone5.reset();
 }
@@ -126,7 +127,7 @@ void keyPressed(){
   }
   
   if(key=='q'){
-     println(gone);
+     println(er);
      //println(winning);
      //println("x="+dollII.x);
      //println("y="+dollII.y);

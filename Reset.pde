@@ -19,8 +19,7 @@ class Reset{
         gone=0;
         counta=0;
         winning=false;
-        losing=false;
-        
+        losing=false;  
       }
     }
   }

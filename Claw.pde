@@ -65,4 +65,10 @@ class Claw{
       }
     }
   }
+  void clawLose(){
+    if(clawPosition1.x==-273 && !winning){
+      losing=true;
+    } 
+    clone3.doll=0;
+  }
 }

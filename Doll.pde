@@ -59,10 +59,6 @@ class Doll{
       winning=true;
     }else if(dollI.x<-40){
       winning=true;
-    }else{
-      if(lock){
-        losing=true;
-      }
     }
   }
       
