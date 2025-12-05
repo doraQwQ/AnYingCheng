@@ -8,17 +8,19 @@ int claw1Y=-70;
 int accleration=1;
 int counter=0;
 int anCount=0;
+int counta=0;
 boolean lock=false;
 boolean bottom=true;
 boolean winning=false;
 boolean losing=false;
+int gone=0;
 int timer=0;
-int x=0;
 PVector dollI = new PVector(650,1330);
 PVector dollII= new PVector(1300,1390);
 Claw clone= new Claw();
 Doll clone3 = new Doll(clone);
 WinLose clone4 = new WinLose();
+Reset clone5= new Reset();
 void setup() {
   size(400, 400);
   bg = loadImage("bg.jpg");
@@ -37,39 +39,11 @@ void setup() {
 
 /*starting position for claw -300,-70*/
 
-//void draw(){
-//  scale(0.2,0.2);
-//    image(doll1,650,x);
-//    x-=5;
-//}
 void draw() {
 
-  pushMatrix();
-    scale(0.37, 0.37);
-    image(bg, 0, 0);
-  popMatrix();
-  pushMatrix();
-    scale(0.2,0.2);
-    image(doll1,dollI.x,dollI.y);
-    
-  popMatrix();
-   fill(0);
-  pushMatrix();
-    scale(0.2,0.2);
-    image(doll2,dollII.x,dollII.y);
-    scale(1,1);
-    //quad(600,1500,700,1400,700,1860,600,2200);
-    rect(0,1500,600,2050);
-    textSize(45);
-    fill(255);
-    text("ONLY SmArT PeOpLe CaN SeE\nThE InViSiBlE LiNe oN ClAw!!!\n\nPress A,D to move & space \n\nif the doll is here you win!\n\nHave FUN!!!   :D",
-    10,1570);
-  popMatrix();
+  bg();
   clone.contrain();
   clone.clawDraw();
-  if(dollI.y!=1330){
-    x++;
-  }
   if(lock){
     clone.clawDrop();
   }
@@ -92,10 +66,30 @@ void draw() {
   }
   clone3.dollWin();
   clone4.whin();
-  //pushMatrix();
-  //scale(0.3,0.3);
-  //image(win,200,200);
-  //popMatrix();
+  clone5.reset();
+}
+void bg(){
+  pushMatrix();
+    scale(0.37, 0.37);
+    image(bg, 0, 0);
+  popMatrix();
+  pushMatrix();
+    scale(0.2,0.2);
+    image(doll1,dollI.x,dollI.y);
+    
+  popMatrix();
+   fill(0);
+  pushMatrix();
+    scale(0.2,0.2);
+    image(doll2,dollII.x,dollII.y);
+    scale(1,1);
+    //quad(600,1500,700,1400,700,1860,600,2200);
+    rect(0,1500,600,2050);
+    textSize(45);
+    fill(255);
+    text("ONLY SmArT PeOpLe CaN SeE\nThE InViSiBlE LiNe oN ClAw!!!\n\nPress A,D to move & space \n\nif the doll is here you win!\n\nHave FUN!!!   :D",
+    10,1570);
+  popMatrix();
 }
 //This funcition reset the speed as the user holds down button
 void resetSpeed(){
@@ -131,12 +125,12 @@ void keyPressed(){
   }
   
   if(key=='q'){
-     println(x);
-     println(winning);
+     println(gone);
+     //println(winning);
      //println("x="+dollII.x);
      //println("y="+dollII.y);
-     println("x="+dollI.x);
-     println("y="+dollI.y);
+     //println("x="+dollI.x);
+     //println("y="+dollI.y);
   }
 }
 

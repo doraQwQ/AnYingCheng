@@ -1,8 +1,4 @@
 class WinLose{
-  //Doll clone5;
-  //WinLose(Doll d){
-  //  clone5=d;
-  //}
   //this function checks the winning condition
   void whin(){
     if(winning){
@@ -17,10 +13,12 @@ class WinLose{
         if(dollII.x!=1300&&dollII.y!=1390){
            dollII.x=5000;
            clone3.doll=0;
+           gone+=1;
         }
         if(dollI.x!=1300&&dollI.y==42){
            dollI.x=8000;
            clone3.doll=0;
+           gone+=1;
         }
         anCount=0;
         winning=false;
@@ -29,9 +27,5 @@ class WinLose{
     if(!winning&&!losing){
       anCount=0;
     }
-  }
-  //This function reset dolls once both dolls are clawed
-  void reset(){
-    
   }
 }

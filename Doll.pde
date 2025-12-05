@@ -1,7 +1,6 @@
 class Doll{
   boolean clawUp1=false;
   boolean clawUp2=false;
-  boolean dollDrop1=false;
   boolean firstTime=true;
   int doll=0;
   int count=0;
@@ -53,7 +52,6 @@ class Doll{
     }
     if(dollI.x<-120.5 ){    
       clawUp1=false;
-      dollDrop1=true;
     }
   }
   void dollWin(){
