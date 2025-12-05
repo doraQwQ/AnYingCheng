@@ -2,7 +2,7 @@
 //This is a claw machine game, player can use 
 //a,d to move claw, and space to claw dolls.
 //2025-12-3
-PImage bg, claw1, claw2,doll1,doll2;
+PImage bg, claw1, claw2,doll1,doll2,win,lose;
 int claw1X=-300;
 int claw1Y=-70;
 int accleration=1;
@@ -22,6 +22,8 @@ void setup() {
   claw2 = loadImage("claw2.png");
   doll1 = loadImage("doll1.png");
   doll2 = loadImage("doll2.png");
+  win=loadImage("state1.png");
+  lose=loadImage("state2.png");
   rectMode(CORNERS);
   
 }
@@ -53,11 +55,11 @@ void draw() {
     scale(0.2,0.2);
     image(doll2,dollII.x,dollII.y);
     scale(1,1);
-    quad(600,1500,700,1400,700,1860,600,2200);
+    //quad(600,1500,700,1400,700,1860,600,2200);
     rect(0,1500,600,2050);
     textSize(45);
     fill(255);
-    text("ONLY SmArT PeOpLe CaN SeE\nThE InViSiBlE LiNe oN ClAw!!!\n\nPress A,D to move & space as\nwell!\n\n\nHave FUN!!!   :D",
+    text("ONLY SmArT PeOpLe CaN SeE\nThE InViSiBlE LiNe oN ClAw!!!\n\nPress A,D to move & space \n\nif the doll is here you win!\n\nHave FUN!!!   :D",
     10,1570);
   popMatrix();
   clone.contrain();
@@ -79,12 +81,16 @@ void draw() {
       clone.clawBack();
       clone3.getDoll();
       clone3.dollShift();
-      clone3.dollDrop();
+      
       
  
     }
     
   }
+  pushMatrix();
+  scale(0.3,0.3);
+  image(win,200,200);
+  popMatrix();
 }
 //This funcition reset the speed as the user holds down button
 void resetSpeed(){
@@ -120,9 +126,11 @@ void keyPressed(){
   
   if(key=='q'){
      println(x);
+     println("x="+dollI.x);
+     println("y="+dollI.y);
   }
 
-   //println("x="+dollI.x);
+   
    //println("y="+dollI.y);
    //println(clone3.clawUp1);
    //println(clone3.dollDrop1);
