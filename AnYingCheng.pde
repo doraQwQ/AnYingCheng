@@ -7,14 +7,18 @@ int claw1X=-300;
 int claw1Y=-70;
 int accleration=1;
 int counter=0;
+int anCount=0;
 boolean lock=false;
 boolean bottom=true;
+boolean winning=false;
+boolean losing=false;
 int timer=0;
 int x=0;
 PVector dollI = new PVector(650,1330);
 PVector dollII= new PVector(1300,1390);
 Claw clone= new Claw();
 Doll clone3 = new Doll(clone);
+WinLose clone4 = new WinLose();
 void setup() {
   size(400, 400);
   bg = loadImage("bg.jpg");
@@ -39,8 +43,7 @@ void setup() {
 //    x-=5;
 //}
 void draw() {
-  
-  
+
   pushMatrix();
     scale(0.37, 0.37);
     image(bg, 0, 0);
@@ -87,10 +90,12 @@ void draw() {
     }
     
   }
-  pushMatrix();
-  scale(0.3,0.3);
-  image(win,200,200);
-  popMatrix();
+  clone3.dollWin();
+  clone4.whin();
+  //pushMatrix();
+  //scale(0.3,0.3);
+  //image(win,200,200);
+  //popMatrix();
 }
 //This funcition reset the speed as the user holds down button
 void resetSpeed(){
@@ -99,6 +104,7 @@ void resetSpeed(){
       counter=0;  
   }
 }
+
 // This function detects user key presses
 void keyPressed(){
   if(key=='a'){
@@ -126,20 +132,14 @@ void keyPressed(){
   
   if(key=='q'){
      println(x);
+     println(winning);
+     //println("x="+dollII.x);
+     //println("y="+dollII.y);
      println("x="+dollI.x);
      println("y="+dollI.y);
   }
-
-   
-   //println("y="+dollI.y);
-   //println(clone3.clawUp1);
-   //println(clone3.dollDrop1);
-   //println("x="+dollII.x);
-   //println("y="+dollII.y);
-
-  
-  
 }
+
 //This function ensure user key releases
 void keyReleased(){
   if(key=='a'){
@@ -154,5 +154,4 @@ void keyReleased(){
    accleration=1;
    counter=0;
   }
-  
 }
