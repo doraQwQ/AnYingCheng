@@ -10,7 +10,7 @@ class Doll{
   Doll(Claw c) {
     clone2=c;
   }
- 
+ //This function moves doll
   void getDoll(){
     if (clone2.clawPosition1.x >=-12 && clone2.clawPosition1.x<35&&doll!=2){    //lift doll 1 
       if(dollI.y>54){
@@ -54,6 +54,7 @@ class Doll{
       clawUp1=false;
     }
   }
+  //This function sets the condition for dollWin
   void dollWin(){
     if(dollII.x<17.5){
       winning=true;

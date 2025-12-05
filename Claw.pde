@@ -65,6 +65,7 @@ class Claw{
       }
     }
   }
+  //This function ensures the lose condition
   void clawLose(){
     if(clawPosition1.x==-273 && !winning){
       losing=true;

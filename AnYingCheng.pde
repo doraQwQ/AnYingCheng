@@ -34,10 +34,6 @@ void setup() {
   rectMode(CORNERS);
   
 }
-//detection for doll
-//  rect(150,300,260,400);
-//  rect(270,300,400,400);
-
 /*starting position for claw -300,-70*/
 
 void draw() {
@@ -59,17 +55,14 @@ void draw() {
       clone.clawBack();
       clone3.getDoll();
       clone3.dollShift();
-      
-      
- 
-    }
-    
+    }   
   }
   clone3.dollWin();
   clone.clawLose();
   clone4.whin();
   clone5.reset();
 }
+//This function draws the bg for game
 void bg(){
   pushMatrix();
     scale(0.37, 0.37);
@@ -85,7 +78,6 @@ void bg(){
     scale(0.2,0.2);
     image(doll2,dollII.x,dollII.y);
     scale(1,1);
-    //quad(600,1500,700,1400,700,1860,600,2200);
     rect(0,1500,600,2050);
     textSize(45);
     fill(255);
@@ -93,7 +85,7 @@ void bg(){
     10,1570);
   popMatrix();
 }
-//This funcition reset the speed as the user holds down button
+//This function reset the speed as the user holds down button
 void resetSpeed(){
   if(counter==5 && accleration<=5){    //reset the speeding
       accleration+=1;
